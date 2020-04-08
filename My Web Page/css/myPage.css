@@ -1,5 +1,5 @@
 .main {
-    background-image: linear-gradient(#000066, #009999, #FFFFFF);
+    background-image: linear-gradient(#000066, #009999, #ffffff);
     padding: 10px 10px;
 }
 
@@ -8,12 +8,30 @@
     border: 3px dotted #FFFFFF;
     padding: 6px;
     margin-left: 57%;
-    margin-bottom: 7%;
+    margin-bottom: 3%;
 }
 
 .aboutme {
     font-size: 15 px;
-    padding: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 2%;
+    text-align: center;
+}
+
+.request {
+    margin-left: 80%;
+}
+
+th,
+td {
+    border: 1px solid black;
 }
 
 h1 {
@@ -24,7 +42,7 @@ h1 {
     font-family: fantasy;
 }
 
-label {
+.me {
     font-size: 30px;
     font-weight: bold;
     padding-left: 30px;
