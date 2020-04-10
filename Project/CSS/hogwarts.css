@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+.home {
+    padding-left: 120px;
+    padding-top: 190px;
+    background-image: url('/Users/admin/Desktop/Course/Software-Apps-2019501075/Project/IMAGES/hogs.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: bisque;
+    height: 100%;
+}
+
+.founders {
+    width: 40%;
+    float: right
+}
+
+.hh1 {
+    font-family: fantasy;
+    font-size: 100px;
+}
+
+.hh2 {
+    font-size: 80px;
+}
