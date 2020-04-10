@@ -1,9 +1,33 @@
-body {
-    background-image: url('/Users/admin/Desktop/Course/Software-Apps-2019501075/Project/IMAGES/hogs.jpg');
+head {
+    padding-left: 120px
+}
+
+.founderbody {
+    background-image: url('../IMAGES/steps.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.eachfounder {
+    background-color: black;
+    border: 1px solid darkslategrey;
+    opacity: 0.75;
+}
+
+.hogwartscontent {
+    background-image: url('../IMAGES/hogs.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     color: bisque;
+}
+
+.logo {
+    position: sticky;
+    top: 0;
+    display: block;
+    text-decoration: none;
 }
 
 .homeMain {
@@ -34,24 +58,30 @@ a {
 }
 
 .hh1 {
-    padding-left: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
     font-family: fantasy;
-    font-size: 100px;
+    font-size: 600%;
     font-weight: bolder;
 }
 
 .hh2 {
-    padding-left: 120px;
-    padding-top: 100px;
-    font-size: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 220px;
+    font-size: 450%;
 }
 
 h1 {
+    padding-left: 60px;
+    padding-right: 60px;
     color: peru;
     font-size: 55px;
 }
 
 h3 {
+    padding-left: 60px;
+    padding-right: 60px;
     color: goldenrod;
     font-weight: bold;
     font-size: 25px;
@@ -59,5 +89,7 @@ h3 {
 }
 
 p {
+    padding-left: 60px;
+    padding-right: 60px;
     font-size: 20px;
 }
