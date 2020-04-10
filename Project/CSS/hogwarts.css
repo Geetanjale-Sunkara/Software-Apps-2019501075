@@ -1,28 +1,63 @@
 body {
-    background-color: black;
-}
-
-.home {
-    padding-left: 120px;
-    padding-top: 190px;
     background-image: url('/Users/admin/Desktop/Course/Software-Apps-2019501075/Project/IMAGES/hogs.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     color: bisque;
+}
+
+.homeMain {
+    margin: 30px;
+    color: goldenrod;
     height: 100%;
+    background-color: black;
+    border: 1px solid darkslategrey;
+    opacity: 0.75;
+}
+
+.discription {
+    font-weight: bold;
+    padding: 20px;
+    padding-top: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .founders {
+    opacity: 0.95;
+    padding-top: 90px;
     width: 40%;
     float: right
 }
 
+a {
+    color: burlywood;
+}
+
 .hh1 {
+    padding-left: 120px;
     font-family: fantasy;
     font-size: 100px;
+    font-weight: bolder;
 }
 
 .hh2 {
+    padding-left: 120px;
+    padding-top: 100px;
     font-size: 80px;
+}
+
+h1 {
+    color: peru;
+    font-size: 55px;
+}
+
+h3 {
+    color: goldenrod;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
 }
