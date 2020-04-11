@@ -71,9 +71,8 @@ td {
 
 .hogwartscontent {
     background-image: url('../IMAGES/hogs.jpg');
-    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
-    background-size: 100% 100%;
     color: bisque;
 }
 
