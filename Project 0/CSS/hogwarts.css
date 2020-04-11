@@ -90,7 +90,7 @@ td {
     background-color: black;
     border: 1px solid darkslategrey;
     opacity: 0.75;
-    font-size: xx-large;
+    font-size: 250px;
     text-align: center;
 }
 
@@ -149,3 +149,5 @@ p {
     padding-right: 60px;
     font-size: 20px;
 }
+
+q
