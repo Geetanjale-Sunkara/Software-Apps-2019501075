@@ -90,7 +90,8 @@ td {
     background-color: black;
     border: 1px solid darkslategrey;
     opacity: 0.75;
-    font-size: x-large
+    font-size: x-large;
+    text-align: center;
 }
 
 .discription {
@@ -124,7 +125,6 @@ p a {
 }
 
 .homeMain h1 {
-    padding-left: 60px;
     padding-right: 60px;
     padding-top: 220px;
 }
