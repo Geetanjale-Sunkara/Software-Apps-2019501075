@@ -90,6 +90,7 @@ td {
     background-color: black;
     border: 1px solid darkslategrey;
     opacity: 0.75;
+    font-size: 450%;
 }
 
 .discription {
@@ -127,7 +128,6 @@ p a {
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 220px;
-    font-size: 450%;
 }
 
 h1 {
