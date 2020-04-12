@@ -1,153 +1,176 @@
-head {
-    padding-left: 120px
-}
-
-.staffbody {
-    background-image: url('../IMAGES/office.jpg');
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    color: palegoldenrod;
-}
-
-.subjectbody {
-    background-image: url('../IMAGES/library.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    color: moccasin;
-    text-align: left;
-}
-
-.ravenclawgroup {
-    background-color: royalblue;
-    border: 1px solid lightskyblue;
-    opacity: 0.75;
-}
-
-.hufflepuffgroup {
-    background-color: darkkhaki;
-    border: 1px solid tan;
-    opacity: 0.75;
-}
-
-.gryfindorgroup {
-    background-color: firebrick;
-    border: 1px solid red;
-    opacity: 0.75;
-}
-
-.slytheryngroup {
-    background-color: forestgreen;
-    border: 1px solid greenyellow;
-    opacity: 0.75;
-}
-
-table,
-th,
-td {
-    border: 1px solid goldenrod;
-    border-collapse: collapse;
-}
-
-.founderbody {
-    background-image: url('../IMAGES/steps.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-
-.eachfounder {
-    background-color: black;
-    border: 1px solid darkslategrey;
-    opacity: 0.75;
-}
-
-.housesbody {
-    background-image: url('../IMAGES/greathall.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-
-.hogwartscontent {
-    background-image: url('../IMAGES/hogs.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    color: bisque;
-}
-
-.logo {
-    position: sticky;
-    top: 0;
-    display: block;
-    text-decoration: none;
-}
-
-.homeMain {
-    margin: 30px;
-    color: goldenrod;
-    height: 100%;
-    background-color: black;
-    border: 1px solid darkslategrey;
-    opacity: 0.75;
-    font-size: 250px;
-    text-align: center;
-}
-
-.discription {
-    font-weight: bold;
-    padding: 20px;
-    padding-top: 50px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.founders {
-    opacity: 0.95;
-    padding-top: 90px;
-    width: 40%;
-    float: right
-}
-
-a {
-    color: tan;
-}
-
-p a {
-    color: palegoldenrod;
-}
-
-.hh1 {
-    padding-left: 60px;
-    padding-right: 60px;
-    font-family: fantasy;
-    font-size: 600%;
-    font-weight: bolder;
-}
-
-.homeMain h1 {
-    padding-right: 60px;
-    padding-top: 260px;
-}
-
-h1 {
-    padding-left: 60px;
-    padding-right: 60px;
-    color: peru;
-    font-size: 55px;
-}
-
-h3 {
-    padding-left: 60px;
-    padding-right: 60px;
-    color: goldenrod;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-p {
-    padding-left: 60px;
-    padding-right: 60px;
-    font-size: 20px;
-}
-
-q
+    head {
+        padding-left: 120px
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .staffbody {
+            background-image: url('../IMAGES/office.jpg');
+            background-attachment: fixed;
+            color: palegoldenrod;
+        }
+        .subjectbody {
+            background-image: url('../IMAGES/library.jpg');
+            background-attachment: fixed;
+            color: moccasin;
+            text-align: left;
+        }
+        .housesbody {
+            background-image: url('../IMAGES/greathall.jpg');
+            background-attachment: fixed;
+        }
+        .founderbody {
+            background-image: url('../IMAGES/steps.jpg');
+            background-attachment: fixed;
+        }
+        .hogwartscontent {
+            background-image: url('../IMAGES/hogs.jpg');
+            background-attachment: fixed;
+            color: bisque;
+        }
+    }
+    
+    @media only screen and (min-width: 600px) {
+        .staffbody {
+            background-image: url('../IMAGES/office.jpg');
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: palegoldenrod;
+        }
+        .subjectbody {
+            background-image: url('../IMAGES/library.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: moccasin;
+            text-align: left;
+        }
+        .housesbody {
+            background-image: url('../IMAGES/greathall.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .founderbody {
+            background-image: url('../IMAGES/steps.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .hogwartscontent {
+            background-image: url('../IMAGES/hogs.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: bisque;
+        }
+    }
+    
+    .ravenclawgroup {
+        background-color: royalblue;
+        border: 1px solid lightskyblue;
+        opacity: 0.75;
+    }
+    
+    .hufflepuffgroup {
+        background-color: darkkhaki;
+        border: 1px solid tan;
+        opacity: 0.75;
+    }
+    
+    .gryfindorgroup {
+        background-color: firebrick;
+        border: 1px solid red;
+        opacity: 0.75;
+    }
+    
+    .slytheryngroup {
+        background-color: forestgreen;
+        border: 1px solid greenyellow;
+        opacity: 0.75;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid goldenrod;
+        border-collapse: collapse;
+    }
+    
+    .eachfounder {
+        background-color: black;
+        border: 1px solid darkslategrey;
+        opacity: 0.75;
+    }
+    
+    .logo {
+        position: sticky;
+        top: 0;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .homeMain {
+        margin: 30px;
+        color: goldenrod;
+        height: 100%;
+        background-color: black;
+        border: 1px solid darkslategrey;
+        opacity: 0.75;
+        font-size: 250px;
+        text-align: center;
+    }
+    
+    .discription {
+        font-weight: bold;
+        padding: 20px;
+        padding-top: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .founders {
+        opacity: 0.95;
+        padding-top: 90px;
+        width: 40%;
+        float: right
+    }
+    
+    a {
+        color: tan;
+    }
+    
+    p a {
+        color: palegoldenrod;
+    }
+    
+    .hh1 {
+        padding-left: 60px;
+        padding-right: 60px;
+        font-family: fantasy;
+        font-size: 600%;
+        font-weight: bolder;
+    }
+    
+    .homeMain h1 {
+        padding-right: 60px;
+        padding-top: 260px;
+    }
+    
+    h1 {
+        padding-left: 60px;
+        padding-right: 60px;
+        color: peru;
+        font-size: 55px;
+    }
+    
+    h3 {
+        padding-left: 60px;
+        padding-right: 60px;
+        color: goldenrod;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    p {
+        padding-left: 60px;
+        padding-right: 60px;
+        font-size: 20px;
+    }
