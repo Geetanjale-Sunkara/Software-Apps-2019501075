@@ -7,6 +7,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import render_template
 from flask import request
 
+
 app = Flask(__name__)
 
 # Check for environment variable
