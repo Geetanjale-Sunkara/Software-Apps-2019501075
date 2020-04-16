@@ -6,9 +6,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import render_template
 from flask import request
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -21,9 +22,17 @@ Session(app)
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
-db = scoped_session(sessionmaker(bind=engine))
+db = SQLAlchemy(app)
 
-names = {}
+
+class user(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80))
+    email = db.Column(db.String(120), unique=True)
+    password = db.Column(db.String(80))
+
+
+db.create_all()
 
 
 @app.route("/")
@@ -37,7 +46,13 @@ def register():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         email = request.form.get("email")
-        print(uname+"    "+pwd + " "+email)
-        names[email] = [uname, pwd]
-        return render_template("sucess.html", mail=email, username=uname, name=names)
+        print(uname+" "+pwd + " "+email)
+        check = user.query.filter_by(email=email).first()
+        if check is None:
+            register = user(username=uname, email=email, password=pwd)
+            db.session.add(register)
+            db.session.commit()
+        else:
+            return "Failed email already registered"
+        return render_template("sucess.html", mail=register.email, username=register.username, register=register)
     return render_template("register.html")
