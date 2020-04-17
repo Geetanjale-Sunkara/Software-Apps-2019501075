@@ -46,13 +46,17 @@ def register():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         email = request.form.get("email")
-        print(uname+" "+pwd + " "+email)
-        check = user.query.filter_by(email=email).first()
-        if check is None:
-            register = user(username=uname, email=email, password=pwd)
-            db.session.add(register)
-            db.session.commit()
+        if uname != "" and pwd != "" and email != "":
+            check = user.query.filter_by(email=email).first()
+            checkun = user.query.filter_by(username=uname).first()
+            if (check is None) and (checkun is None):
+                register = user(username=uname, email=email, password=pwd)
+                db.session.add(register)
+                db.session.commit()
+            else:
+                msg = "Already registered"
+                return render_template("failed.html", msg=msg)
+            return render_template("sucess.html", mail=register.email, username=register.username, register=register)
         else:
-            return "Failed email already registered"
-        return render_template("sucess.html", mail=register.email, username=register.username, register=register)
-    return render_template("register.html")
+            return render_template("register.html", msg="Please enter data")
+    return render_template("register.html", msg="")
