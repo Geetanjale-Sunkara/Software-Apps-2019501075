@@ -23,8 +23,6 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-names = {}
-
 
 @app.route("/")
 def index():
@@ -38,6 +36,5 @@ def register():
         pwd = request.form.get("pwd")
         email = request.form.get("email")
         print(uname+"    "+pwd + " "+email)
-        names[email] = [uname, pwd]
         return render_template("sucess.html", mail=email, username=uname, name=names)
     return render_template("register.html")
