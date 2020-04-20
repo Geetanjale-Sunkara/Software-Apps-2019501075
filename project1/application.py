@@ -34,9 +34,6 @@ class user(db.Model):
     password = db.Column(db.String(80))
 
 
-db.create_all()
-
-
 @app.route("/")
 def index():
     if 'log' in session and 'uname' in session:
@@ -88,3 +85,7 @@ def register():
 def logout():
     session.clear()
     return render_template("logedout.html")
+
+
+if __name__ == "__main__":
+    db.create_all()
