@@ -44,7 +44,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route("/auth", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
         uname = request.form.get("uname")
