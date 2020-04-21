@@ -25,6 +25,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = SQLAlchemy(app)
+db.create_all()
 
 
 class user(db.Model):
@@ -85,7 +86,3 @@ def register():
 def logout():
     session.clear()
     return render_template("logedout.html")
-
-
-if __name__ == "__main__":
-    db.create_all()
