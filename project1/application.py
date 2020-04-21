@@ -6,9 +6,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from flask import render_template
 from flask import request
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
@@ -21,8 +22,17 @@ Session(app)
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
-db = scoped_session(sessionmaker(bind=engine))
+db = SQLAlchemy(app)
 
+
+class user(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80))
+    email = db.Column(db.String(120), unique=True)
+    password = db.Column(db.String(80))
+
+
+db.create_all()
 
 @app.route("/")
 def index():
@@ -35,6 +45,17 @@ def register():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         email = request.form.get("email")
-        print(uname+"    "+pwd + " "+email)
-        return render_template("sucess.html", mail=email, username=uname, name=names)
-    return render_template("register.html")
+        if uname != "" and pwd != "" and email != "":
+            check = user.query.filter_by(email=email).first()
+            checkun = user.query.filter_by(username=uname).first()
+            if (check is None) and (checkun is None):
+                register = user(username=uname, email=email, password=pwd)
+                db.session.add(register)
+                db.session.commit()
+            else:
+                msg = "Already registered"
+                return render_template("failed.html", msg=msg)
+            return render_template("sucess.html", mail=register.email, username=register.username, register=register)
+        else:
+            return render_template("register.html", msg="Please enter data")
+    return render_template("register.html", msg="")
