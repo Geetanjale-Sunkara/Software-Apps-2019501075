@@ -25,7 +25,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = SQLAlchemy(app)
-db.create_all()
 
 
 class user(db.Model):
@@ -34,6 +33,8 @@ class user(db.Model):
     email = db.Column(db.String(120), unique=True)
     password = db.Column(db.String(80))
 
+
+db.create_all()
 
 @app.route("/")
 def index():
