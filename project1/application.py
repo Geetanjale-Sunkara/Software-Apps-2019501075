@@ -48,7 +48,7 @@ def login():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         if uname != "" and pwd != "":
-            login = user.query.filter_by(uname=uname, password=pwd).first()
+            login = user.query.filter_by(uname=email, password=pwd).first()
             if login is not None:
                 session['log'] = True
                 session['uname'] = uname
