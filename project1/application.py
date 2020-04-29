@@ -25,7 +25,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = SQLAlchemy(app)
-db.create_all()
 
 
 class user(db.Model):
@@ -33,6 +32,9 @@ class user(db.Model):
     uname = db.Column(db.String(80))
     email = db.Column(db.String(120), unique=True)
     password = db.Column(db.String(80))
+
+
+db.create_all()
 
 
 @app.route("/")
@@ -48,7 +50,7 @@ def login():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         if uname != "" and pwd != "":
-            login = user.query.filter_by(uname=email, password=pwd).first()
+            login = user.query.filter_by(email=uname, password=pwd).first()
             if login is not None:
                 session['log'] = True
                 session['uname'] = uname

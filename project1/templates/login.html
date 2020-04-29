@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <script>  
-function validateform(){  
-  var name=document.myform.uname.value;  
-  var password=document.myform.pwd.value; 
+function validateform(form){  
+  var name=form.uname.value;  
+  var password=form.pwd.value; 
   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
     
   if (name==null || name==""){  
@@ -25,11 +25,11 @@ function validateform(){
 }  
 </script> 
 <body>
-<h4 id = "msg"></h4>
+<h4 id = "msg">{{msg}}</h4>
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <div class="col-sm-6">
-                <form method="POST" onsubmit="return validateform()">
+                <form method="POST" action = "/auth" onsubmit="return validateform(this);">
                     <div class="form-group">
                       <label for="email">Username : </label>
                       <input type="text" name="uname" class="form-control" id="uname">
