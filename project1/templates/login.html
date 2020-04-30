@@ -12,20 +12,22 @@ function validateform(form){
   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
     
   if (name==null || name==""){  
-    alert("Name can't be blank");  
-    return false;  
-  }else if(password.length<6){  
-    alert("Password must be at least 6 characters long.");  
+    alert("User Name can't be blank");  
+    document.getElementById("msg").innerHTML = "User Name or email address can't be blank";
     return false;  
   } else if (reg.test(name) == false) {
     alert('Invalid Email Address');
+    document.getElementById("msg").innerHTML = 'Invalid Email Address'
     return false;
-  }
+  } else if(password.length<6){  
+    alert("Password must be at least 6 characters long.");  
+    document.getElementById("msg").innerHTML = "Password must be at least 6 characters long."
+    return false;  
+  } 
   return true;
 }  
 </script> 
 <body>
-<h4 id = "msg">{{msg}}</h4>
     <div class="container">
         <div class="row" style="margin-top: 40px">
             <div class="col-sm-6">
@@ -42,8 +44,7 @@ function validateform(form){
                 </form>
             </div>
         </div>
+        <h4 id = "msg"></h4>
     </div>
-
-
 </body>
 </html>

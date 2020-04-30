@@ -15,19 +15,21 @@ function validateform(form){
     
   if (name==null || name=="" || email == null || email == ""){  
     alert("Name or email address can't be blank");  
+    document.getElementById("msg").innerHTML = "Name or email address can't be blank";
     return false;  
-  }else if(password.length<6){  
-    alert("Password must be at least 6 characters long.");  
-    return false;  
-  } else if (reg.test(email) == false) {
+  } else if (reg.test(mail) == false) {
     alert('Invalid Email Address');
+    document.getElementById("msg").innerHTML = 'Invalid Email Address'
     return false;
+  } else if(password.length<6){  
+    alert("Password must be at least 6 characters long.");  
+    document.getElementById("msg").innerHTML = "Password must be at least 6 characters long."
+    return false;  
   }
   return true;
 }  
 </script> 
 <body>
-<h4></h4>
 <div class="container">
   <h2>Registration form</h2>
   <form method = "POST" action = "/register" onsubmit="return validateform(this);">
@@ -45,6 +47,7 @@ function validateform(form){
     </div>
     <button type="submit" class="btn btn-default">Register</button>
   </form>
+  <h4 id = "msg"></h4>
 </div>
 
 </body>
