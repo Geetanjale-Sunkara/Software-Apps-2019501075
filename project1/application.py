@@ -36,6 +36,7 @@ class user(db.Model):
 
 db.create_all()
 
+
 @app.route("/")
 def index():
     if 'log' in session and 'uname' in session:
@@ -49,7 +50,7 @@ def login():
         uname = request.form.get("uname")
         pwd = request.form.get("pwd")
         if uname != "" and pwd != "":
-            login = user.query.filter_by(uname=uname, password=pwd).first()
+            login = user.query.filter_by(email=uname, password=pwd).first()
             if login is not None:
                 session['log'] = True
                 session['uname'] = uname
