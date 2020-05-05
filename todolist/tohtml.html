@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TodoList</title>
+        <style>
+            body{
+                padding: 30px;
+                background-image: url('todo.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+        </style>
+    </head>
+    <script src = "todo.js"></script>
+    <body>
+        <div id="body" class="header">
+            <h2 style="margin:5px; padding:10px; color:#ff4d4d">My To Do List</h2>
+            <input type="text" id="myInput" placeholder="Title...">
+            <button onclick="newTask()" class="addBtn">Add task</button>
+            <button onclick="doneTask()" class="done">Mark Done</button>
+            <button onclick="deleteTask()" class="delete">Delete Tasks</button>
+        </div>
+
+        <ol id="mylist" >
+
+        </ol>
+    </body>
+</html>
