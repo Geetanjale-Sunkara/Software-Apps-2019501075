@@ -36,7 +36,6 @@ class user(db.Model):
 
 db.create_all()
 
-
 @app.route("/")
 def index():
     if 'log' in session and 'uname' in session:
