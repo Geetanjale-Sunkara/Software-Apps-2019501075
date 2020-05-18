@@ -6,21 +6,17 @@ function newTask() {
     if (inputValue === '') {
         alert("You must write something!");
     } else {
+        li.innerHTML += '<button onclick="doneTaskk(this)" >Task Done</button><button onclick="deleteTaskk(this)" >Delete Task</button>'
         document.getElementById("mylist").appendChild(li);
     }
     document.getElementById("myInput").value = "";
 }
 
-function doneTask() {
-    var input = parseInt(document.getElementById("myInput").value);
-    var lis = document.getElementById("mylist");
-    lis.childNodes[input].style.textDecoration = "line-through";
-    document.getElementById("myInput").value = ""
+function deleteTaskk(ev) {
+    ev.parentNode.parentNode.removeChild(ev.parentNode);
 }
 
-function deleteTask() {
-    var input = parseInt(document.getElementById("myInput").value);
-    var lis = document.getElementById("mylist");
-    lis.removeChild(lis.childNodes[input]);
-    document.getElementById("myInput").value = ""
+function doneTaskk(ev) {
+    ev.parentNode.style.textDecoration = "line-through";
+    ev.parentNode.removeChild(ev);
 }
